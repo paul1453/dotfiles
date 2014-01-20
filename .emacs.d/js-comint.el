@@ -268,3 +268,16 @@ Javascript source.
 "
 (use-local-map inferior-js-mode-map)
 )
+
+;;; PEM: Addition to get rid of crazy control characters (I hope)
+;;;
+
+(setq inferior-js-mode-hook
+      (lambda ()
+        ;; We like nice colors
+        (ansi-color-for-comint-mode-on)
+        ;; Deal with some prompt nonsense
+        (add-to-list
+         'comint-preoutput-filter-functions
+         (lambda (output)
+           (replace-regexp-in-string "\033\\[[0-9]+[GK]" "" output)))))
