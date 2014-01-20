@@ -18,7 +18,7 @@
 (require 'compile)
 (ido-mode t)
 (menu-bar-mode -1)
- (normal-erase-is-backspace-mode 0)
+(normal-erase-is-backspace-mode 0)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (setq column-number-mode t)
@@ -76,8 +76,8 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
- ;; ---------------------------
- ;; -- Fix the Node REPL     --
- ;; ---------------------------
- 
- (setenv "NODE_NO_READLINE" "1")
+;; ---------------------------
+;; -- Fix the Node REPL     --
+;; ---------------------------
+
+(setenv "NODE_NO_READLINE" "1")
